@@ -83,14 +83,14 @@ func (d  Director) Accept(v Visitor) {
 There we go, we have finished to implement our Visitor Pattern, let's test it.
 
 ```golang
-    backend := Developer{"Bob", "Bilbo", 1000, 32}
-	boss := Director{"Bob", "Baggins", 2000, 40}
+backend := Developer{"Bob", "Bilbo", 1000, 32}
+boss := Director{"Bob", "Baggins", 2000, 40}
 
-	backend.FullName()
-	backend.Accept(CalculIncome{20})
+backend.FullName()
+backend.Accept(CalculIncome{20})
 
-	boss.FullName()
-	boss.Accept(CalculIncome{10})
+boss.FullName()
+boss.Accept(CalculIncome{10})
 ```
 
 output :
@@ -119,16 +119,16 @@ func (c AddingCaptainAge) VisitDirector(d Director) {
 
 and using it the same way as previsouly :
 ```golang
-    backend := Developer{"Bob", "Bilbo", 1000, 32}
-	boss := Director{"Bob", "Baggins", 2000, 40}
+backend := Developer{"Bob", "Bilbo", 1000, 32}
+boss := Director{"Bob", "Baggins", 2000, 40}
 
-	backend.FullName()
-	backend.Accept(CalculIncome{20})
-	backend.Accept(AddingCaptainAge{42})
+backend.FullName()
+backend.Accept(CalculIncome{20})
+backend.Accept(AddingCaptainAge{42})
 
-	boss.FullName()
-	boss.Accept(CalculIncome{10})
-	boss.Accept(AddingCaptainAge{42})
+boss.FullName()
+boss.Accept(CalculIncome{10})
+boss.Accept(AddingCaptainAge{42})
 ```
 
 output :
@@ -144,4 +144,5 @@ Director  Bob   Baggins
 ```
 
 Execute the code : https://play.golang.org/p/ddouZJj2z2S
+Read on medium : https://medium.com/@felipedutratine/visitor-design-pattern-in-golang-3c142a12945a
 
